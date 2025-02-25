@@ -1,11 +1,20 @@
 import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
+import vuePlugin from '@vitejs/plugin-vue'
 import tailwindcss from '@tailwindcss/vite'
+import federation from "@originjs/vite-plugin-federation";
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [
-    vue(),
+    vuePlugin(),
     tailwindcss(),
+    federation({
+      name: 'host-app',
+      remotes: {
+        remote_app: "http://localhost:5001/assets/remoteEntry.js",
+      },
+    })
   ],
+  server: {
+    port: 5000,
+  }
 })

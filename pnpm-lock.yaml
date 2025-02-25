@@ -6,11 +6,14 @@ settings:
 
 importers:
 
+  .:
+    devDependencies:
+      '@originjs/vite-plugin-federation':
+        specifier: ^1.3.9
+        version: 1.3.9
+
   vue2:
     dependencies:
-      '@vitejs/plugin-vue2':
-        specifier: ^2.3.3
-        version: 2.3.3(vite@6.2.0)(vue@2.7.16)
       bootstrap:
         specifier: '4'
         version: 4.6.2(jquery@3.7.1)(popper.js@1.16.1)
@@ -27,6 +30,9 @@ importers:
         specifier: ^3.6.5
         version: 3.6.5(vue@2.7.16)
     devDependencies:
+      '@vitejs/plugin-vue2':
+        specifier: ^2.3.3
+        version: 2.3.3(vite@6.2.0)(vue@2.7.16)
       '@vue/cli-plugin-babel':
         specifier: ~5.0.0
         version: 5.0.8(@vue/cli-service@5.0.8)(core-js@3.40.0)(vue@2.7.16)
@@ -48,6 +54,9 @@ importers:
       vue:
         specifier: ^3.5.13
         version: 3.5.13
+      vue-router:
+        specifier: ^4.5.0
+        version: 4.5.0(vue@3.5.13)
     devDependencies:
       '@vitejs/plugin-vue':
         specifier: ^5.2.1
@@ -1464,6 +1473,14 @@ packages:
       fastq: 1.19.0
     dev: true
 
+  /@originjs/vite-plugin-federation@1.3.9:
+    resolution: {integrity: sha512-2rm5ZD5L9I0geLOaaYwpXT6V6E3O8vDAVCTDHOmJ+QnmpnHctK/iToGJX1ZYFEnR/1s0w7yF7kDW4Ksjpxfa1w==}
+    engines: {node: '>=14.0.0', pnpm: '>=7.0.1'}
+    dependencies:
+      estree-walker: 3.0.3
+      magic-string: 0.27.0
+    dev: true
+
   /@polka/url@1.0.0-next.28:
     resolution: {integrity: sha512-8LduaNlMZGwdZ6qWrKlfa+2M4gahzFkprZiAt2TF8uS0qQgBizKXpXURqvTJ4WtmupWxaLqjRb2UCTe72mu+Aw==}
     dev: true
@@ -1943,7 +1960,7 @@ packages:
     dependencies:
       vite: 6.2.0
       vue: 2.7.16
-    dev: false
+    dev: true
 
   /@vitejs/plugin-vue@5.2.1(vite@6.2.0)(vue@3.5.13):
     resolution: {integrity: sha512-cxh314tzaWwOLqVes2gnnCtvBDcM1UMdn+iFR+UjAn411dPT3tOmqrJjbMd7koZpMAmBM/GqeV4n9ge7JSiJJQ==}
@@ -2473,6 +2490,10 @@ packages:
       - walrus
       - whiskers
     dev: true
+
+  /@vue/devtools-api@6.6.4:
+    resolution: {integrity: sha512-sGhTPMuXqZ1rVOk32RylztWkfXTRhuS7vgAKv0zjqk8gbsHkJ7xfFf+jbySxt7tWObEJwyKaHMikV/WGDiQm8g==}
+    dev: false
 
   /@vue/reactivity@3.5.13:
     resolution: {integrity: sha512-NaCwtw8o48B9I6L1zl2p41OHo/2Z4wqYGGIK1Khu5T7yxrn+ATOixn/Udn2m+6kZKB/J7cuT9DbWWhRxqixACg==}
@@ -3981,6 +4002,12 @@ packages:
   /estree-walker@2.0.2:
     resolution: {integrity: sha512-Rfkk/Mp/DL7JVje3u18FxFujQlTNR2q6QfMSMB7AvCBx91NGj/ba3kCfza0f6dVDbw7YlRf/nDrn7pQrCCyQ/w==}
 
+  /estree-walker@3.0.3:
+    resolution: {integrity: sha512-7RUKfXgSMMkzt6ZuXmqapOurLGPPfgj6l9uRZ7lRGolvk0y2yocc35LdcxKC5PQZdn2DMqioAQ2NoWcrTKmm6g==}
+    dependencies:
+      '@types/estree': 1.0.6
+    dev: true
+
   /esutils@2.0.3:
     resolution: {integrity: sha512-kVscqXk4OCp68SZ0dkgEKVi6/8ij300KBWTJq32P/dYeWTSwK41WyTxalN1eRmA5Z9UU/LX9D7FWSmV9SAYx6g==}
     engines: {node: '>=0.10.0'}
@@ -5006,6 +5033,13 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       yallist: 4.0.0
+    dev: true
+
+  /magic-string@0.27.0:
+    resolution: {integrity: sha512-8UnnX2PeRAPZuN12svgR9j7M1uWMovg/CEnIwIG0LFkXSJJe4PdfUGiTGl8V9bsBHFUtfVINcSyYxd7q+kx9fA==}
+    engines: {node: '>=12'}
+    dependencies:
+      '@jridgewell/sourcemap-codec': 1.5.0
     dev: true
 
   /magic-string@0.30.17:
@@ -6977,6 +7011,15 @@ packages:
       vue: ^2
     dependencies:
       vue: 2.7.16
+    dev: false
+
+  /vue-router@4.5.0(vue@3.5.13):
+    resolution: {integrity: sha512-HDuk+PuH5monfNuY+ct49mNmkCRK4xJAV9Ts4z9UFc4rzdDnxQLyCMGGc8pKhZhHTVzfanpNwB/lwqevcBwI4w==}
+    peerDependencies:
+      vue: ^3.2.0
+    dependencies:
+      '@vue/devtools-api': 6.6.4
+      vue: 3.5.13
     dev: false
 
   /vue-style-loader@4.1.3:
