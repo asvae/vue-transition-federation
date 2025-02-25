@@ -3,18 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
     "bootstrap": "4",
     "core-js": "^3.8.3",
-    "vue": "^2.6.14",
-    "vue-router": "^3.6.5"
+    "vue": "^2.7.16",
+    "vue-router": "^3.6.5",
+    "vite": "^6.2.0",
+    "@vitejs/plugin-vue2": "^2.3.3"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
-    "vue-template-compiler": "^2.6.14"
+    "vue-template-compiler": "^2.7.16"
   }
 }
