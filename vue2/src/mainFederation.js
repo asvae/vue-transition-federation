@@ -2,13 +2,25 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Vue from 'vue'
 import App from './App.vue'
-import router from './router';
+import Router from 'vue-router'
+import { routes } from './routes'
 
-export default {createVue2App: (selector= '') => {
-  Vue.config.productionTip = false
+export default {
+  createVue2App: (selector= '', routes) => {
+    Vue.config.productionTip = false
+    Vue.use(Router);
 
-  new Vue({
-    router,
-    render: h => h(App),
-  }).$mount(selector)
-}}
+    const router = new Router({
+      mode: 'abstract',
+      routes,
+    });
+
+    router.push(window.location.pathname.replace(/^\/$/, ''));
+
+    new Vue({
+      router,
+      render: h => h(App),
+    }).$mount(selector)
+  },
+  routes
+}

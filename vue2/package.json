@@ -6,7 +6,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "remote": "yarn build && yarn preview --port 5001"
+    "remote": "yarn build && node src/fixRemoteCSS.js && yarn preview --port 5001"
   },
   "dependencies": {
     "bootstrap": "4",

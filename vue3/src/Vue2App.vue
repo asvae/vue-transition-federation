@@ -8,7 +8,7 @@ import { onMounted } from 'vue'
 import main from 'remote_app/mainFederation.js'
 
 onMounted(() => {
-  main.createVue2App('#app-vue2')
+  main.createVue2App('#app-vue2', main.routes)
 })
 </script>
 

@@ -5,15 +5,16 @@ import prefixer from 'postcss-prefix-selector';
 import autoprefixer from 'autoprefixer';
 
 export default defineConfig({
+  base: 'http://localhost:5001/',
+  server: {
+    port: 5001,
+  },
   plugins: [
     vuePlugin(),
     federation({
       name: 'remote-app',
       filename: 'remoteEntry.js',
       exposes: {
-        './ProductPage.vue': './src/ProductPage.vue',
-        './UserDashboard.vue': './src/UserDashboard.vue',
-        './someJsFile.js': './src/someJsFile.js',
         './mainFederation.js': './src/mainFederation.js',
       },
     }),
@@ -44,8 +45,5 @@ export default defineConfig({
         autoprefixer({}) // add options if needed
       ],
     }
-  },
-  server: {
-    port: 5001,
   },
 })

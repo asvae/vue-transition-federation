@@ -9,7 +9,3 @@ export default {
   components: { FrameworkInfo },
 };
 </script>
-
-<style>
-
-</style>
