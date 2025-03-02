@@ -1,5 +1,5 @@
 <template>
-  <div id="vue2-app"/>
+  <div id="app-vue2"/>
 </template>
 
 <script setup>
@@ -7,10 +7,12 @@ import { onMounted } from 'vue'
 
 import main from 'remote_app/mainFederation.js'
 
-console.log('main', main)
-
 onMounted(() => {
-  main.createVue2App('#vue2-app')
+  main.createVue2App('#app-vue2')
 })
 </script>
+
+<style>
+
+</style>
 
