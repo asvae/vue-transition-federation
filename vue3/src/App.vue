@@ -1,10 +1,47 @@
 <script setup>
+import { useRoute } from 'vue-router'
 
+const route = useRoute();
 </script>
 
 <template>
-  <div class="hidden">hidden</div>
-  <router-view/>
+  <div id="app-vue3" class="bg-gray-900 text-white min-h-screen flex">
+    <!-- Sidebar -->
+    <nav class="w-1/3 bg-black p-4 flex flex-col">
+      <h2 class="text-lightgreen text-xl font-bold">Vue 3</h2>
+      <ul class="space-y-2 mt-4">
+        <li>
+          <router-link
+            to="/page1"
+            class="block px-4 py-2 rounded text-white transition duration-300"
+            :class="{ 'bg-gray-700': route.path === '/page1' }">
+            Page 1
+          </router-link>
+        </li>
+        <li>
+          <router-link
+            to="/page2"
+            class="block px-4 py-2 rounded text-white transition duration-300"
+            :class="{ 'bg-gray-700': route.path === '/page2' }">
+            Page 2
+          </router-link>
+        </li>
+        <li>
+          <router-link
+            to="/page3"
+            class="block px-4 py-2 rounded text-white transition duration-300"
+            :class="{ 'bg-gray-700': route.path === '/page3' }">
+            Page 3
+          </router-link>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="w-2/3 p-6">
+      <router-view />
+    </main>
+  </div>
 </template>
 
 <style scoped>

@@ -20,27 +20,31 @@ export default {
   data() {
     return {
       vueVersion: +Vue.version.split('.')[0],
-      bootstrapDetected: this.isBootstrapLoaded(),
-      tailwindDetected: this.isTailwindLoaded(),
+      bootstrapDetected: null,
+      tailwindDetected: null,
     };
+  },
+  mounted () {
+    this.bootstrapDetected = this.isBootstrapLoaded()
+    this.tailwindDetected = this.isTailwindLoaded()
   },
   methods: {
     isBootstrapLoaded() {
       // Bootstrap applies 'd-none' as display: none
       const testElement = document.createElement('div');
       testElement.classList.add('d-none'); // 'd-none' is a Bootstrap-specific utility
-      document.body.appendChild(testElement);
+      this.$el.appendChild(testElement);
       const isHidden = getComputedStyle(testElement).display === 'none';
-      document.body.removeChild(testElement);
+      this.$el.removeChild(testElement);
       return isHidden;
     },
     isTailwindLoaded() {
       // Tailwind applies 'hidden' as display: none
       const testElement = document.createElement('div');
       testElement.classList.add('hidden');
-      document.body.appendChild(testElement);
+      this.$el.appendChild(testElement);
       const isHidden = getComputedStyle(testElement).display === 'none';
-      document.body.removeChild(testElement);
+      this.$el.removeChild(testElement);
       return isHidden;
     },
   },

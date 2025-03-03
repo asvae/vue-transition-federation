@@ -29,9 +29,9 @@ export default defineConfig({
             //   return selector.replace(/^([^\s]*)/, `$1 ${prefix}`);
             // }
 
-            if (filePath.match(/node_modules/)) {
-              return selector; // Do not prefix styles imported from node_modules
-            }
+            // if (filePath.match(/node_modules/)) {
+            //   return selector; // Do not prefix styles imported from node_modules
+            // }
 
             const annotation = rule.prev();
             if (annotation?.type === 'comment' && annotation.text.trim() === 'no-prefix') {

@@ -6,7 +6,7 @@ import Router from 'vue-router'
 import { routes } from './routes'
 
 export default {
-  createVue2App: (selector= '', routes) => {
+  createVue2App: (selector, routes) => {
     Vue.config.productionTip = false
     Vue.use(Router);
 

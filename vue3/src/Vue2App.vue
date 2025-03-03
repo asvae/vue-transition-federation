@@ -1,5 +1,7 @@
 <template>
-  <div id="app-vue2"/>
+  <div>
+    <div id="app-vue2"></div>
+  </div>
 </template>
 
 <script setup>
