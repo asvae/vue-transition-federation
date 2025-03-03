@@ -1,5 +1,8 @@
 <template>
-  <FrameworkInfo />
+  <div>
+    <h2>Page 1</h2>
+    <FrameworkInfo />
+  </div>
 </template>
 
 <script>

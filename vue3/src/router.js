@@ -1,11 +1,16 @@
-import { createMemoryHistory, createRouter } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
+import main from 'remote_app/mainFederation.js'
+
+const vue2Routes = main.routes.map(route => {
+  return {
+    ...route,
+    component: () => import('./Vue2App.vue'),
+  }
+})
 
 export default new createRouter({
-  history: createMemoryHistory(),
+  history: createWebHistory(),
   routes: [
-    {
-      path: '/',
-      component: () => import('./Vue2App.vue')
-    },
+    ...vue2Routes,
   ]
 });

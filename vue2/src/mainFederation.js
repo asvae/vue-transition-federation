@@ -15,12 +15,12 @@ export default {
       routes,
     });
 
-    router.push(window.location.pathname.replace(/^\/$/, ''));
-
     new Vue({
       router,
       render: h => h(App),
     }).$mount(selector)
+
+    return router
   },
   routes
 }
