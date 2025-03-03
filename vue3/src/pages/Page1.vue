@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="tailwind-on">
     <h2 class="text-4xl font-bold mb-4">Page 1</h2>
     <FrameworkInfo />
   </div>

@@ -21,7 +21,7 @@ const isBootstrapLoaded = () => {
   testElement.classList.add('d-none'); // 'd-none' is a Bootstrap-specific utility
   document.body.appendChild(testElement);
   const isHidden = getComputedStyle(testElement).display === 'none';
-  document.body.removeChild(testElement);
+  // document.body.removeChild(testElement);
   return isHidden;
 }
 const isTailwindLoaded = () => {
@@ -30,7 +30,7 @@ const isTailwindLoaded = () => {
   testElement.classList.add('hidden');
   document.body.appendChild(testElement);
   const isHidden = getComputedStyle(testElement).display === 'none';
-  document.body.removeChild(testElement);
+  // document.body.removeChild(testElement);
   return isHidden;
 }
 

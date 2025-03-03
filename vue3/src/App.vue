@@ -5,9 +5,9 @@ const route = useRoute();
 </script>
 
 <template>
-  <div id="app-vue3" class="bg-gray-900 text-white min-h-screen flex">
+  <div id="app-vue3" style="background-color: #1a202c; color: white; min-height: 100vh; display: flex;">
     <!-- Sidebar -->
-    <nav class="w-1/3 bg-black p-4 flex flex-col">
+    <nav style="width: 33.333333%; background-color: black; padding: 1rem; display: flex; flex-direction: column;">
       <h2 class="text-lightgreen text-xl font-bold">Vue 3</h2>
       <ul class="space-y-2 mt-4">
         <li>
