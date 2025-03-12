@@ -5,6 +5,7 @@ import federation from "@originjs/vite-plugin-federation";
 import topLevelAwait from "vite-plugin-top-level-await";
 import autoprefixer from 'autoprefixer';
 import prefixer from 'postcss-prefix-selector';
+import vueDevTools from 'vite-plugin-vue-devtools'
 
 export default defineConfig({
   plugins: [
@@ -21,7 +22,8 @@ export default defineConfig({
       promiseExportName: "__tla",
       // The function to generate import names of top-level await promise in each chunk module
       promiseImportName: i => `__tla_${i}`
-    })
+    }),
+    vueDevTools(),
   ],
   server: {
     port: 5000,

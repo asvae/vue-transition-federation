@@ -13,17 +13,14 @@ import main from 'remote_app/mainFederation.js'
 let routerVue2
 const routerVue3 = useRouter()
 
+const areRoutesInSync = () =>
+  routerVue3.currentRoute.value.path === routerVue2.currentRoute.path
+
 const syncVue2Route = () => {
-  if (routerVue3.currentRoute.value.path === routerVue2.currentRoute.path) {
-    return
-  }
-  routerVue2?.push(routerVue3.currentRoute.value.path);
+  areRoutesInSync() || routerVue2?.push(routerVue3.currentRoute.value.path)
 }
 const syncVue3Route = () => {
-  if (routerVue3.currentRoute.value.path === routerVue2.currentRoute.path) {
-    return
-  }
-  routerVue3.push(routerVue2.currentRoute.path);
+  areRoutesInSync() || routerVue3.push(routerVue2.currentRoute.path)
 }
 
 onMounted(() => {
