@@ -9,11 +9,16 @@
     <div><strong>Vue:</strong> {{ vueVersion }}</div>
     <div><strong>Bootstrap:</strong> <span :class="bootstrapDetected ? 'text-success' : 'text-danger'">{{ bootstrapDetected ? 'Yes' : 'No' }}</span></div>
     <div><strong>Tailwind:</strong> <span :class="tailwindDetected ? 'text-success' : 'text-danger'">{{ tailwindDetected ? 'Yes' : 'No' }}</span></div>
+
+    <button @click="reactiveState.counter++">Reactive State: {{ reactiveState.counter }}</button>
   </div>
 </template>
 
 <script setup>
-import { version } from 'vue'
+import { version, reactive } from 'vue'
+import main from 'remote_app/mainFederation.js'
+
+const reactiveState = reactive(main.reactiveState)
 
 const isBootstrapLoaded = () => {
   // Bootstrap applies 'd-none' as display: none

@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import Router from 'vue-router'
 import { routes } from './routes'
+import { reactiveState } from './reactiveState'
 
 export default {
   createVue2App: (selector, routes) => {
@@ -22,5 +23,6 @@ export default {
 
     return router
   },
-  routes
+  routes,
+  reactiveState: reactiveState,
 }

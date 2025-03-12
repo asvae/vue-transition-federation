@@ -9,19 +9,28 @@
     <div><strong>Vue:</strong> {{ vueVersion }}</div>
     <div><strong>Bootstrap:</strong> <span :class="bootstrapDetected ? 'text-success' : 'text-danger'">{{ bootstrapDetected ? 'Yes' : 'No' }}</span></div>
     <div><strong>Tailwind:</strong> <span :class="tailwindDetected ? 'text-success' : 'text-danger'">{{ tailwindDetected ? 'Yes' : 'No' }}</span></div>
+
+    <button @click="reactiveState.counter++">Reactive State: {{ reactiveState.counter }}</button>
   </div>
 </template>
 
 <script>
 import Vue from 'vue'
+import { reactiveState } from './../reactiveState'
 
 export default {
   name: 'FrameworkInfo',
+  computed: {
+    reactiveState () {
+      return reactiveState
+    },
+  },
   data() {
     return {
       vueVersion: +Vue.version.split('.')[0],
       bootstrapDetected: null,
       tailwindDetected: null,
+      reactiveState,
     };
   },
   mounted () {
